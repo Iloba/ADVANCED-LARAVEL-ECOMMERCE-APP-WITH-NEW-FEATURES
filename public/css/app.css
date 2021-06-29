@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -2128,7 +2128,7 @@ pre code {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -2153,7 +2153,7 @@ pre code {
   background-color: #fff;
   border-color: #a1cbef;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  /* box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25); */
 }
 
 .form-control::-moz-placeholder {
@@ -2632,7 +2632,7 @@ textarea.form-control.is-invalid {
   padding: 0.375rem 0.75rem;
   font-size: 0.9rem;
   line-height: 1.6;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -5003,8 +5003,8 @@ input[type=button].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #90ee90;
+  border-bottom: #90ee90;
 }
 
 .card-header:first-child {
@@ -10903,4 +10903,7 @@ a.text-dark:focus {
   }
 }
 
-
+/* My Css */
+ul li{
+  list-style-type: none;
+}

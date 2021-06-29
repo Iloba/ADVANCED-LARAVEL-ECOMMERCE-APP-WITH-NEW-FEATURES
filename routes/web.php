@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//My Routes Begin
+
+//Store Product
+Route::post('/addProducts', [ProductController::class, 'create'])->name('add_products');
 
 Auth::routes();
 
