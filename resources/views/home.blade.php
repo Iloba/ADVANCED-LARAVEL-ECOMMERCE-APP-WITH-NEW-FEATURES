@@ -8,11 +8,11 @@
                 <div class="card-header">{{ __('Dashboard') }} | {{ __('You are logged in!') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    {{-- @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif --}}
 
                     @include('layouts.errors')
                     <h3>Add new products</h3>
@@ -21,16 +21,16 @@
                         <form action="{{route('add_products')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" name="product_name" class="form-control" placeholder="Product Name">
+                                <input type="text" name="product_name" class="form-control" value="{{Old('product_name')}}" placeholder="Product Name">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" name="product_price" class="form-control" placeholder="Product Price">
+                                <input type="text" name="product_price" class="form-control" value="{{Old('product_price')}}" placeholder="Product Price">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" name="product_category" class="form-control" placeholder="Product Category">
+                                <input type="text" name="product_category" class="form-control" value="{{Old('product_category')}}" placeholder="Product Category">
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" name="product_description" class="form-control" placeholder="Product Description">
+                                <input type="text" name="product_description" class="form-control" value="{{Old('product_description')}}" placeholder="Product Description">
                             </div>
                             <div class="form-group mb-4">
                                 <input type="file" name="product_image" class="form-control" placeholder="Product Image">
