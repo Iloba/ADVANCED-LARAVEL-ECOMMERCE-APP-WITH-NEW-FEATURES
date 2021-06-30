@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -17,4 +18,9 @@ class Product extends Model
         'description',
         'image'
     ];
+
+    //Relationship
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -14,14 +14,29 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //My Routes Begin
 
 //Store Product
 Route::post('/addProducts', [ProductController::class, 'create'])->name('add_products');
+
+//Get all Producst
+Route::get('myproducts', [ProductController::class, 'allproducts'])->name('myproducts');
+
+//Get All Products by User
+ROute::get('/', [ProductController::class, 'getAll'])->name('all_products');
+
+//Edit Product
+Route::get('/edit/{product}', [ProductController::class, 'edit_product'])->name('edit_product');
+
+//Update Products
+Route::put('/edit/{product}/update', [ProductController::class, 'update_product'])->name('update_products');
+
+//Delete Product
+Route::delete('/delete/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
 
 Auth::routes();
 
