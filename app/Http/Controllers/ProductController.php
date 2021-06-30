@@ -56,7 +56,7 @@ class ProductController extends Controller
     //Get all Products
     public function allproducts(){
 
-        $products = Product::all();
+        $products = Product::latest()->paginate(5);
 
         return view('pages.products', [
             'products' => $products
@@ -66,7 +66,7 @@ class ProductController extends Controller
 
     //Get all Products with user
     public function getAll(){
-        $products = Product::all();
+        $products = Product::latest()->paginate(8);
         $latestProducts = Product::latest()->first();
         return view('welcome',[
             'products' => $products,
@@ -128,6 +128,11 @@ class ProductController extends Controller
 
     return redirect()->back()->with('status', 'Product Deleted Successfully');
 
+   }
+
+   //Add to cart
+   public function addToCart(){
+       return 'hello';
    }
 
 

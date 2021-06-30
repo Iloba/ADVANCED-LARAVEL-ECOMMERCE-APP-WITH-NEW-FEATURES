@@ -38,6 +38,9 @@ Route::put('/edit/{product}/update', [ProductController::class, 'update_product'
 //Delete Product
 Route::delete('/delete/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
 
+//Add to Cart
+Route::post('addtoCart', [ProductController::class, 'addToCart'])->name('add_to_cart');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
