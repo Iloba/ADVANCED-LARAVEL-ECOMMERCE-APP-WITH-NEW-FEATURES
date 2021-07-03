@@ -54,6 +54,9 @@ Route::post('/createCustomer', [CustomerController::class, 'register'])->name('c
 //login Customer
 Route::post('/loginCustomer', [CustomerController::class, 'login'])->name('signin_customer');
 
+//Logout Customer
+Route::post('/logoutCustomer', [CustomerController::class, 'logout'])->name('logout_customer');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

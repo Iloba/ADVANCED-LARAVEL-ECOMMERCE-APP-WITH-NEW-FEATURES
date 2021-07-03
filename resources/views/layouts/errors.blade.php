@@ -5,8 +5,8 @@
 
 @elseif(session('error'))
 
-    <div class="alert alert-dager">
-        {{session('danger')}}
+    <div class="alert alert-danger">
+        {{session('error')}}
     </div>
     
 @endif

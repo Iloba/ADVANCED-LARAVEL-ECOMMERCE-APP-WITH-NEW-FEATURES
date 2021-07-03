@@ -2,9 +2,11 @@
 <section class="main-section p-5">
    <div class="container">
         <div class="row">
+           
             <div class="col-md-10 mx-auto">
-                <div class="card p-5 shadow">
+                <div class="card p-3 shadow">
                     <div class="card-body">
+                        @include('layouts.errors')
                         <h2 class="mb-4 text-center">Welcome, Please Register Below</h2>
                         <form action="{{route('create_customer')}}" method="POST">
                             @csrf

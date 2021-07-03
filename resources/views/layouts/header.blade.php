@@ -47,44 +47,49 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::has('login_customers'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login_customers') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
+                @if (session()->has('customer'))
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ session('customer')->name}}
+                    </a>
                     
+                   
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                        
+                       
+                        <a class="dropdown-item" href="{{ route('logout_customer') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout_customer') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+
+                   
+                </li>
+
+                @else
+
+                    @if (Route::has('login_customers'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login_customers') }}">{{ __('Login') }}</a>
+                    </li>
+                    @endif
+            
                     @if (Route::has('register_customers'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register_customers') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
                         
-                       
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('home') }}">
-                                Dashboard
-                             </a>
-                            
-                            <a class="dropdown-item" href="{{ route('myproducts') }}">
-                               My Products
-                            </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-
-                       
-                    </li>
+                 @endif
+                   
+                @else
+               
+                   
                     
                 @endguest
             </ul>

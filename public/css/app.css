@@ -10924,4 +10924,7 @@ ul li{
   .container .row{
     width: 100%;
   }
+  .col-md-5{
+    width: 100%;
+  }
 }
