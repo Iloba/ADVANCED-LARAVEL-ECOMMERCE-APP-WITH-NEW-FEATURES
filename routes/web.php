@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,18 @@ Route::delete('/delete/{id}', [ProductController::class, 'delete_product'])->nam
 
 //Add to Cart
 Route::post('addtoCart', [ProductController::class, 'addToCart'])->name('add_to_cart');
+
+//Register Customers
+Route::view('/registerCustomer', 'customers.register')->name('register_customers');
+
+//Login Customers
+Route::view('/loginCustomer', 'customers.login')->name('login_customers');
+
+//Create Customer
+Route::post('/createCustomer', [CustomerController::class, 'register'])->name('create_customer');
+
+//login Customer
+Route::post('/loginCustomer', [CustomerController::class, 'login'])->name('signin_customer');
 
 Auth::routes();
 

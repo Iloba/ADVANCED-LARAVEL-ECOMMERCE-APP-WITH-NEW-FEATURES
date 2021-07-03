@@ -10904,9 +10904,24 @@ a.text-dark:focus {
 }
 
 /* My Css */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 ul li{
   list-style-type: none;
 }
 .main-section{
   min-height: 100vh;
+}
+@media(max-width: 500px){
+  .card{
+    width: 100%;
+    padding: 10px;
+  }
+  .container .row{
+    width: 100%;
+  }
 }
