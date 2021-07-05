@@ -45,7 +45,7 @@ class ProductController extends Controller
        //Save Data to Database
       $products = $request->user()->products()->create([
             'name' => $request->product_name,
-            'price' => $request->product_price,
+            'price' => number_format($request->product_price),
             'category' => $request->product_category,
             'description' => $request->product_description,
             'image' => $originalName
@@ -225,6 +225,9 @@ class ProductController extends Controller
         ->select('products.*')
         ->sum('products.price');
 
+        
+
+        
       
 
         return view('customers.orders',[

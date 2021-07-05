@@ -17,10 +17,10 @@
                          <tbody>
                              <tr>
                                  <td>
-                                    $ {{$total}}
+                                    N {{$total}}
                                  </td>
                                  <td>
-                                    $ 10
+                                    N 10
                                  </td>
                                  <td>
                                      {{$total + 10}}
