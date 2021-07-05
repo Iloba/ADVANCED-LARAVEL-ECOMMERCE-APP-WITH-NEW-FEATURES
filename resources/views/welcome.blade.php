@@ -39,7 +39,7 @@
                         </div>
                         <div class="p-3">
                             <h5>{{$item->name}}</h5>
-                            <h5>N{{$item->price}}</h5>
+                            <h5>N {{$item->price}}</h5>
                             <h5>{{$item->category}}</h5>
                             <div class="d-flex">
                                <form action="{{route('add_to_cart')}}" class="m-1" method="POST">

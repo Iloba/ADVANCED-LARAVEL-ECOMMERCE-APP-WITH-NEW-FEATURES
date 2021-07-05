@@ -57,6 +57,21 @@ Route::post('/loginCustomer', [CustomerController::class, 'login'])->name('signi
 //Logout Customer
 Route::post('/logoutCustomer', [CustomerController::class, 'logout'])->name('logout_customer');
 
+//cart Page
+Route::get('cartItems', [ProductController::class, 'cartItems'])->name('get_cart_items');
+
+//Remove item from Cart
+Route::post('remove/{id}', [ProductController::class, 'remove'])->name('remove_from_cart');
+
+//Orders Page
+Route::get('orders', [ProductController::class, 'orderItems'])->name('order');
+
+//place order
+Route::post('placeOrder', [ProductController::class, 'placeOrder'])->name('place_order');
+
+//Track my orde
+Route::get('trackOrder', [ProductController::class, 'trackOrder'])->name('track_my_orders');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

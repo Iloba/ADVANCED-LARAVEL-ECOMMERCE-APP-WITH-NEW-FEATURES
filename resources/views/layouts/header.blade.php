@@ -1,3 +1,17 @@
+@php
+    //import the controller
+    use App\Http\Controllers\ProductController;
+    
+    $total = 0;
+    $totalOrders = 0;
+    
+    //if session exists display count counter
+    if(Session()->has('customer')){
+        $total = ProductController::cartCount();
+        $totalOrders = ProductController::orderCount();
+    }
+@endphp
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -39,7 +53,7 @@
                     <a class="nav-link" href="">Wishlist</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Track my Orders</a>
+                    <a class="nav-link" href="{{route('track_my_orders')}}">Track my Orders <span class="badge badge-info">{{$totalOrders}}</span></a>
                 </li>
             </ul>
 
@@ -69,6 +83,9 @@
                     </div>
 
                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('get_cart_items')}}">Cart <span class="badge badge-success">{{$total}}</span></a>
                 </li>
 
                 @else

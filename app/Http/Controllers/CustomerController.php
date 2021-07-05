@@ -58,7 +58,11 @@ class CustomerController extends Controller
 
                 //Create Session
                 $request->session()->put('customer', $customer);
+                
+                //Redirect
                 return redirect()->route('all_products')->with('status', 'Login Successful');
+
+               
             }
         
         }else{
