@@ -39,7 +39,7 @@
                         <div class="p-3">
                             <h5>{{$item->name}}</h5>
                             <h5 class="text-success">N{{$item->price}}</h5>
-                            {{-- <h5>{{$item->category}}</h5> --}}
+                            <small>Product by: {{$item->user->name}}</small>
                             <div class="d-flex">
                                <form action="{{route('add_to_cart')}}" class="m-1" method="POST">
                                  @csrf

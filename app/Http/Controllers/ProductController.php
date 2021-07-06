@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Customer;
@@ -62,7 +63,7 @@ class ProductController extends Controller
     //Get all Products
     public function allproducts(){
 
-        $products = Product::latest()->paginate(5);
+        $products = Product::latest()->with(['user', 'products'])->paginate(10);
 
         return view('pages.products', [
             'products' => $products
@@ -72,7 +73,8 @@ class ProductController extends Controller
 
     //Get all Products with user
     public function getAll(){
-        $products = Product::latest()->paginate(8);
+        //get all posts with Eager loading
+        $products = Product::latest()->with(['user', 'products' ])->paginate(5);
         $latestProducts = Product::latest()->first();
         return view('welcome',[
             'products' => $products,

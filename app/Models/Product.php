@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Product extends Model
 {
     use HasFactory;
-
-
+      
     protected $fillable = [
         'name',
         'price',
@@ -19,8 +18,14 @@ class Product extends Model
         'image'
     ];
 
-    //Relationship
-    public function users(){
+      //Relationship
+      public function user(){
         return $this->belongsTo(User::class);
     }
+    //RElationship
+    public function products(){
+        return $this->belongsTo(User::class);
+    }
+
+  
 }
