@@ -49,12 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="">Wishlist</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('track_my_orders')}}">Track my Orders <span class="badge badge-info">{{$totalOrders}}</span></a>
-                </li>
+                
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -62,6 +57,17 @@
                 <!-- Authentication Links -->
                 @guest
                 @if (session()->has('customer'))
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="">Wishlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('track_my_orders')}}">Track my Orders <span class="badge badge-info">{{$totalOrders}}</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('get_cart_items')}}">Cart <span class="badge badge-success">{{$total}}</span></a>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ session('customer')->name}}
@@ -84,10 +90,7 @@
 
                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('get_cart_items')}}">Cart <span class="badge badge-success">{{$total}}</span></a>
-                </li>
-
+               
                 @else
 
                     @if (Route::has('login_customers'))

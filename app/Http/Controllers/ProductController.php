@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
@@ -134,20 +135,24 @@ class ProductController extends Controller
     return redirect()->back()->with('status', 'Product Deleted Successfully');
 
    }
-
+  
    //Add to cart
    public function addToCart(Request $request, Cart $cart){
+        //check if item is already added to cart{
+        if(DB::table('carts')
+        ->where('product_id', '=', $request->product_id)
+        ->where('user_id', '=', $request->session()->get('customer')->id)
+        ->exists()
+        ){
+            return redirect()->back()->with('error', 'Product Already in Cart');
+        }
     
 
        
         //check if user is logged in
         if($request->session()->has('customer')){
             
-        //check if item is already added to cart{
-        if(Cart::where('product_id', $request->product_id)->exists()){
-            return redirect()->back()->with('error', 'Product Already in Cart');
-        }
-
+     
            
         //Add to cart
         $cart = new Cart;

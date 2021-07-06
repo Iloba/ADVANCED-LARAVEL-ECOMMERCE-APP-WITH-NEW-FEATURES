@@ -17,6 +17,7 @@
                         <h5>Payment Method: {{$orderedItem->payment_method}}</h5>
                         <h5>Payment Status: {{$orderedItem->payment_status}}</h5>
                         <h5>Delivery Address: {{$orderedItem->address}}</h5>
+                        <h5>Delivery Address: {{\Carbon\Carbon::parse($orderedItem->created_at)->diffForHumans() }}</h5>
                        
                     </div>
                 </div>
