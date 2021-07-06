@@ -74,7 +74,7 @@ class ProductController extends Controller
     //Get all Products with user
     public function getAll(){
         //get all posts with Eager loading
-        $products = Product::latest()->with(['user', 'products' ])->paginate(5);
+        $products = Product::latest()->with(['user', 'products' ])->paginate(8);
         $latestProducts = Product::latest()->first();
         return view('welcome',[
             'products' => $products,
