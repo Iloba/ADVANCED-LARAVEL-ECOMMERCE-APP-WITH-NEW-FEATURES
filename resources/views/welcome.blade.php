@@ -26,8 +26,8 @@
     </a>
   </div>
     
-    
-    <div class="container mt-3">
+    <h2 class="text-center mb-5 mt-5">Our Products</h2>
+    <div class="container mt-3 mb-3">
             <div class="row">
                 @foreach ($products as $item)
                 <div class="col-md-3 mb-3">
