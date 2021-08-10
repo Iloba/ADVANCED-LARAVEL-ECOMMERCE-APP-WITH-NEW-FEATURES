@@ -12,7 +12,7 @@
                         <div class="card shadow p-3 mb-4">
                             <div class="row mb-3">
                                 <div class="col-md-4">
-                                    <img class="img-fluid" style="max-width: 200px;" src="{{asset('/storage/products/'.$items->image)}}" alt="">
+                                    <img class="img-fluid" style="max-width: 200px;" src="{{asset('/uploads/products/'.$items->image)}}" alt="">
                                 </div>
                                 <div class="col-md-4">
                                 <h5>Product Name:  {{$items->name}}</h5>

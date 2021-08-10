@@ -10917,16 +10917,6 @@ ul li{
   min-height: 100vh;
 }
 @media(max-width: 500px){
-  .card{
-    width: 100%;
-    padding: 10px;
-  }
-  .container .row{
-    width: 100%;
-  }
-  .col-md-5{
-    width: 100%;
-  }
   .p-3{
     padding: 1rem !important;
     margin: auto;

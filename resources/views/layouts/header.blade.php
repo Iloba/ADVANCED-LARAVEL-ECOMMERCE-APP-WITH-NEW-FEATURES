@@ -55,48 +55,48 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
-                @guest
+              
                 @if (session()->has('customer'))
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="">Wishlist</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('track_my_orders')}}">Track my Orders <span class="badge badge-info">{{$totalOrders}}</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('get_cart_items')}}">Cart <span class="badge badge-success">{{$total}}</span></a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ session('customer')->name}}
-                    </a>
                     
-                   
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        
-                        
-                       
-                        <a class="dropdown-item" href="{{ route('logout_customer') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout_customer') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Wishlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('track_my_orders')}}">Track my Orders <span class="badge badge-info">{{$totalOrders}}</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('get_cart_items')}}">Cart <span class="badge badge-success">{{$total}}</span></a>
+                    </li>
 
-                   
-                </li>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ session('customer')->name}}
+                        </a>
+                        
+                    
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            
+                            
+                        
+                            <a class="dropdown-item" href="{{ route('logout_customer') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout_customer') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+
+                    
+                    </li>
                
                 @else
 
                     @if (Route::has('login_customers'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login_customers') }}">{{ __('Login') }}</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login_customers') }}">{{ __('Login') }}</a>
+                        </li>
                     @endif
             
                     @if (Route::has('register_customers'))
@@ -105,13 +105,9 @@
                         </li>
                     @endif
                         
-                 @endif
+                @endif
                    
-                @else
-               
-                   
-                    
-                @endguest
+            
             </ul>
         </div>
     </div>
