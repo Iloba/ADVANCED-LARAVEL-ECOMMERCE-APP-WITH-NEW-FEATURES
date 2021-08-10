@@ -10927,4 +10927,12 @@ ul li{
   .col-md-5{
     width: 100%;
   }
+  .p-3{
+    padding: 1rem !important;
+    margin: auto;
+  }
+  .p-5{
+    padding: 1rem !important;
+    margin: auto;
+  }
 }

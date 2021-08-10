@@ -34,7 +34,7 @@
                    
                     <div class="card shadow">
                         <div class="card card-body">
-                            <img class="d-block img-fluid w-100" src="{{asset('storage/products/'.$item->image)}}" alt="First slide">
+                            <img class="d-block img-fluid w-100" src="{{asset('uploads/products/'.$item->image)}}" alt="First slide">
                         </div>
                         <div class="p-3">
                             <h5>{{$item->name}}</h5>

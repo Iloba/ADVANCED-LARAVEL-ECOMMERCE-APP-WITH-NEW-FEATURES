@@ -13,7 +13,8 @@
                             
                             <input type="email" name="email" class="form-control mb-3" placeholder="Email Address" value="{{Old('email')}}">
                             <input type="password" name="password"  class="form-control mb-3" placeholder="Password" >
-                            <button type="submit" class="btn btn-success">Sign In</button>
+                            <button type="submit" class="btn btn-success mb-3">Sign In</button> <br>
+                            <a href="{{route('register_customers')}}">Dont Have an Account?? Register Here</a>
                         </form>
                     </div>
                 </div>

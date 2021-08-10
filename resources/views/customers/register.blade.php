@@ -14,7 +14,8 @@
                             <input type="email" name="email" class="form-control mb-3" placeholder="Email Address" >
                             <input type="password" name="password"  class="form-control mb-3" placeholder="Password" >
                             <input type="password" name="password_confirmation"  class="form-control mb-4" placeholder="Confirm Password" >
-                            <button type="submit" class="btn btn-success">Register</button>
+                            <button type="submit" class="btn btn-success mb-3">Register</button> <br>
+                            <a href="{{route('login_customers')}}">Already Have an Account?? Login Here</a>
                         </form>
                     </div>
                 </div>

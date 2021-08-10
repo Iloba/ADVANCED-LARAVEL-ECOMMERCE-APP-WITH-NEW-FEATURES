@@ -69,7 +69,7 @@ Route::get('orders', [ProductController::class, 'orderItems'])->name('order');
 //place order
 Route::post('placeOrder', [ProductController::class, 'placeOrder'])->name('place_order');
 
-//Track my orde
+//Track my order
 Route::get('trackOrder', [ProductController::class, 'trackOrder'])->name('track_my_orders');
 
 Auth::routes();

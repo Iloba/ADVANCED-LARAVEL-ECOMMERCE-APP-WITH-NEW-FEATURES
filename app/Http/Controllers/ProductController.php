@@ -35,7 +35,7 @@ class ProductController extends Controller
 
 
         //store image
-       $store =  $request->product_image->storeAs('products', $originalName, 'public'); 
+       $store =  $request->product_image->storeAs('products', $originalName, 'public_uploads'); 
 
         // if($store){
         //     return redirect()->route('home')->with('status', 'Photo Updated')
